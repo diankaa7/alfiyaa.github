@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альфия Рафикова - Риелтор | Ваш ключ к идеальной недвижимости</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2aa8a8;
+            --secondary: #5fc9c9;
+            --light: #f0f9f9;
+            --dark: #1e6d6d;
+            --gray: #7a9e9e;
+            --accent: #8cd9d9;
+            --gradient: linear-gradient(135deg, #a8e6e6 0%, #5fc9c9 50%, #2aa8a8 100%);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--gradient);
+            box-shadow: 0 2px 15px rgba(42, 168, 168, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--light);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(42, 168, 168, 0.85), rgba(95, 201, 201, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.7;
+            z-index: -1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(42, 168, 168, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(42, 168, 168, 0.4);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .about .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(42, 168, 168, 0.15);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .stats {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .stat {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: var(--gradient);
+            border-radius: 10px;
+            margin: 0 10px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(42, 168, 168, 0.2);
+        }
+        
+        .stat h4 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--gradient);
+            position: relative;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/white-texture.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .services .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .services .section-title h2 {
+            color: white;
+        }
+        
+        .services .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Properties Section */
+        .properties {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .properties::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .properties .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .property-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(42, 168, 168, 0.1);
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 168, 168, 0.2);
+        }
+        
+        .property-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .property-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .property-card:hover .property-img img {
+            transform: scale(1.1);
+        }
+        
+        .property-info {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .property-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .property-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .property-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/white-texture.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .testimonials .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials .section-title h2 {
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            box-shadow: 0 3px 10px rgba(42, 168, 168, 0.2);
+        }
+        
+        .messenger-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .messenger-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .messenger-link.whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+        
+        .messenger-link.telegram {
+            background: linear-gradient(135deg, #0088cc 0%, #005f8d 100%);
+        }
+        
+        .messenger-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(42, 168, 168, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--accent);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: white;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(42, 168, 168, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .form-info p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-col p, .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--gradient);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(42, 168, 168, 0.2);
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .stat {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">А<span>Р</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#properties">Объекты</a></li>
+                    <li><a href="#testimonials">Отзывы</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Альфия Рафикова</h1>
+            <p>Профессиональный риелтор с -летним опытом. Помогаю найти идеальную недвижимость для жизни.</p>
+            <a href="#contact" class="btn">Связаться со мной</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Обо мне</h2>
+                <p>Профессионал с опытом на рынке недвижимости</p>
+            </div>
+            <!-- ИСПРАВЛЕННЫЙ КОД для секции "Обо мне" -->
+<div class="about-content">
+    <div class="about-img">
+        <img src="https://s3.iimg.su/s/31/gp1iI7dxeRGL04WItHiUDnntB46wDkFNiMaXJWRe.jpg" 
+             alt="Альфия Рафикова" 
+             style="width: 100%; height: auto; display: block; border-radius: 10px;">
+    </div>
+    <div class="about-text">
+        <h3>Ваш надежный партнер в сфере недвижимости</h3>
+        <p>Меня зовут Альфия Рафикова, и я профессиональный риелтор с многолетним опытом работы на рынке недвижимости.</p>
+        <div class="stats">
+            <div class="stat">
+                <h4>10+</h4>
+                <p>Лет опыта</p>
+            </div>
+            <div class="stat">
+                <h4>50+</h4>
+                <p>Довольных клиентов</p>
+            </div>
+            <div class="stat">
+                <h4>100+</h4>
+                <p>Успешных сделок</p>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мои услуги</h2>
+                <p>Полный спектр услуг в сфере недвижимости</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Покупка недвижимости</h3>
+                    <p>Помощь в подборе и покупке квартир, домов, коммерческой недвижимости с учетом ваших потребностей и бюджета.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sign"></i>
+                    </div>
+                    <h3>Продажа недвижимости</h3>
+                    <p>Оценка, подготовка и эффективная продажа вашей недвижимости по максимально выгодной цене в кратчайшие сроки.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Инвестиции в недвижимость</h3>
+                    <p>Консультации по выгодным инвестициям в недвижимость, анализ рисков и потенциальной доходности.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Юридическое сопровождение</h3>
+                    <p>Полное юридическое сопровождение сделки, проверка документов и защита ваших интересов.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Ипотечное консультирование</h3>
+                    <p>Помощь в подборе ипотечных программ, оформлении ипотеки и взаимодействии с банками.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Анализ рынка</h3>
+                    <p>Глубокий анализ рынка недвижимости, прогнозирование цен и консультации по оптимальному времени для сделки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties" id="properties">
+        <div class="container">
+            <div class="section-title">
+                <h2>Премиум объекты</h2>
+                <p>Эксклюзивные предложения на рынке недвижимости</p>
+            </div>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Апартаменты в центре">
+                    </div>
+                    <div class="property-info">
+                        <h3>Апартаменты в центре города</h3>
+                        <p>Просторные апартаменты с панорамным видом в элитном жилом комплексе</p>
+                        <div class="property-price">25 000 000 ₽</div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Загородный дом">
+                    </div>
+                    <div class="property-info">
+                        <h3>Загородный дом у озера</h3>
+                        <p>Уютный двухэтажный дом с собственной территорией и выходом к озеру</p>
+                        <div class="property-price">42 000 000 ₽</div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Пентхаус">
+                    </div>
+                    <div class="property-info">
+                        <h3>Пентхаус с террасой</h3>
+                        <p>Роскошный пентхаус с террасой, джакузи и видом на исторический центр</p>
+                        <div class="property-price">68 000 000 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Отзывы клиентов</h2>
+                <p>Что говорят мои клиенты о сотрудничестве</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Мария Иванова">
+                        </div>
+                        <div class="author-info">
+                            <h4>а</h4>
+                            <p>Куплена квартира</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Дмитрий Соколов">
+                        </div>
+                        <div class="author-info">
+                            <h4>о</h4>
+                            <p>Продана недвижимость</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ольга Кузнецова">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ольга Кузнецова</h4>
+                            <p>Инвестиция в недвижимость</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Свяжитесь со мной</h2>
+                <p>Готова помочь вам с любыми вопросами о недвижимости</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Давайте начнем разговор</h3>
+                    <p>Свяжитесь со мной любым удобным способом, и я с радостью отвечу на все ваши вопросы о недвижимости.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (903) 395-08-27</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>alfiyabatir@mail.ru</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Оренбург</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="messenger-links">
+                        <a href="https://wa.me/79033950827" class="messenger-link whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://t.me/ALFIYA0711" class="messenger-link telegram" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div class="form-info">
+                        <p><strong>Заполните форму и отправьте сообщение прямо на сайте</strong></p>
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ваше имя*</label>
+                            <input type="text" id="name" class="form-control" placeholder="Введите ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон*</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+7 (999) 123-45-67" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение*</label>
+                            <textarea id="message" class="form-control" placeholder="Расскажите о ваших потребностях в недвижимости..." required></textarea>
+                        </div>
+                        <button type="button" class="btn btn-whatsapp" onclick="sendToWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Отправить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>REALESTATE</h3>
+                    <p>Профессиональные услуги в сфере недвижимости. Ваш надежный партнер в поиске идеального дома и выгодной инвестиции.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Быстрые ссылки</h3>
+                    <a href="#home">Главная</a>
+                    <a href="#about">Обо мне</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#properties">Объекты</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Услуги</h3>
+                    <a href="#">Покупка недвижимости</a>
+                    <a href="#">Продажа недвижимости</a>
+                    <a href="#">Инвестиции</a>
+                    <a href="#">Ипотечное консультирование</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +7 (903) 395-08-27</p>
+                    <p><i class="fas fa-envelope"></i> alfiyabatir@mail.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Оренбург</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navMenu = document.querySelector('nav ul');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after click
+                    if(window.innerWidth <= 768) {
+                        document.querySelector('nav ul').style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // WhatsApp отправка
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Проверяем обязательные поля
+            if (!name || !phone || !message) {
+                alert('Пожалуйста, заполните все обязательные поля (имя, телефон и сообщение)');
+                return;
+            }
+            
+            // Форматируем сообщение для WhatsApp
+            const whatsappMessage = `
+💼 *Новая заявка с сайта недвижимости*
+
+👤 *Имя:* ${name}
+📱 *Телефон:* ${phone}
+
+💬 *Сообщение:*
+${message}
+
+⏰ *Отправлено:* ${new Date().toLocaleString('ru-RU')}
+            `.trim();
+            
+            // Кодируем сообщение для URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // ЗАМЕНИТЕ ЭТОТ НОМЕР НА НОМЕР МАМЫ В ФОРМАТЕ 79991234567
+            const momPhoneNumber = '+7 (903) 395-08-27'; // ← ЗАМЕНИТЕ НА НОМЕР МАМЫ
+            
+            // Открываем WhatsApp
+            window.open(`https://wa.me/${momPhoneNumber}?text=${encodedMessage}`, '_blank');
+            
+            // Показываем уведомление
+            alert('Сообщение подготовлено! Откроется WhatsApp для отправки.');
+        }
+        
+        // Обычная отправка формы (альтернатива)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            sendToWhatsApp();
+        });
+        
+        // Change header style on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(42, 168, 168, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = '';
+                header.style.backdropFilter = 'none';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navMenu = document.querySelector('nav ul');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if(window.innerWidth <= 768 && 
+               navMenu.style.display === 'flex' && 
+               !e.target.closest('nav') && 
+               !e.target.closest('.mobile-menu')) {
+                navMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
